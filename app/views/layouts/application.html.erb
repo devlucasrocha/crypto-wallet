@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Crypto Wallet</title>
+    
+    <%= favicon_link_tag asset_path('favicon2.png'), :rel => 'icon', :type =>  'image/png' %>
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag    'scaffolds', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="/welcome/index.html", title="Crypto Wallet">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <%= image_tag src="/assets/favicon2.png", size: "35x35", class:"d-inline-block align-top" %>
+        Crypto Wallet
+      </a>
+       <%#= Time.now.strftime("%H:%M") %> <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+  </nav>
+    <div class="container">
+      <div class="container-fluid">
+        <ul class="nav justify-content-end">
+          
+          <% if params[:controller] != "welcome" %>
+            <li class="nav-item">
+              <%= link_to t('links.home_page'),  root_path, class:"nav-link"  %>
+            </li>
+          <% end %>
+          
+          <li class="nav nav-item">
+            <%= link_to t('language.portuguese'), url_for(locale: 'pt-BR'), class:"nav-link"%>
+          </li>
+          <li class="nav-item">
+            <%= link_to t('language.english'), url_for(locale: 'en'), class:"nav-link"%>
+          </li>
+        </ul>
+        
+        <%= yield %>
+        
+      </div>
+    </div>
+  </body>
+</html>
