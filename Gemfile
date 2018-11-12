@@ -28,12 +28,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'tty-spinner'
 gem 'rails-i18n', '~> 5.1'
-
-# source 'https://rails-assets.org' do
-#   gem 'rails-assets-jquery'
-#   gem 'rails-assets-notifyjs'
-# end
-
+gem 'webpacker'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
